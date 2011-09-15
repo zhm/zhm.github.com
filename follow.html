@@ -19,6 +19,13 @@ window.onload = function() {
     canvas.height = map.dimensions.y;
     map.parent.appendChild(canvas);
 
+    var denver = [
+      new com.modestmaps.Location(39.81, -105.07),
+      new com.modestmaps.Location(39.69, -104.89)
+    ];
+    
+    map.setExtent(denver);
+    
     var locations = [];
 
     function redraw() {
@@ -53,9 +60,9 @@ window.onload = function() {
       navigator.geolocation.getCurrentPosition(function(position) {
         document.getElementById('debug').innerHTML = locations.length.toString();
         locations.push(new com.modestmaps.Location(position.coords.latitude, position.coords.longitude));
-        setTimeout(loop, 1000);
+        setTimeout(loop, 5000);
       }, function() {
-        setTimeout(loop, 1000);
+        setTimeout(loop, 5000);
       });
     };
     
