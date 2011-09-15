@@ -58,7 +58,7 @@ window.onload = function() {
     
     var loop = function() {
       navigator.geolocation.getCurrentPosition(function(position) {
-        document.getElementById('debug').innerHTML = locations.length.toString();
+        document.getElementById('debug').innerHTML = position.coords.latitude.toString() + ', ' position.coords.longitude.toString();
         locations.push(new com.modestmaps.Location(position.coords.latitude, position.coords.longitude));
         setTimeout(loop, 5000);
       }, function() {
