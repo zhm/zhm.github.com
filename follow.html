@@ -20,8 +20,8 @@ window.onload = function() {
     map.parent.appendChild(canvas);
 
     var denver = [
-      new com.modestmaps.Location(39.81, -105.07),
-      new com.modestmaps.Location(39.69, -104.89)
+      new com.modestmaps.Location(39.7468, -104.9982),
+      new com.modestmaps.Location(39.7372, -104.9818)
     ];
     
     map.setExtent(denver);
@@ -35,7 +35,7 @@ window.onload = function() {
         ctx.strokeStyle = 'black';
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 8;
         ctx.beginPath();
         var p = map.locationPoint(locations[0]);
         ctx.moveTo(p.x,p.y);
